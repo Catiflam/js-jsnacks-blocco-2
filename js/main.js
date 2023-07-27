@@ -9,14 +9,20 @@
 const nomi = ["Marco", "Fabio", "Wender", "Paolo"];
 const cognomi = ["Mazzoli", "Alisei", "Giannatempo", "Noise"];
 
-const fintalista = [];
+const fintalistaInvitati = [];
 
-const numeroFintaLista = prompt("Quanti invitati vuoi inserire");
+const numeroFintaLista = parseInt(prompt("Quanti  finti invitati vuoi inserire"));
 
 for (let i = 0; i < numeroFintaLista; i++) {
-	const randomNomiUser = MathF.loor(Math.random * nomi.length);
+	const randomNomiUser = Math.floor(Math.random * nomi.length);
 	const randomNomi = nomi[randomNomiUser];
 
 	const randomCognomiUser = Math.floor(Math.random * cognomi.length);
 	const randomCognomi = cognomi[randomCognomiUser];
+
+	const fintoInvitato = randomNomi + "" + randomCognomi;
+
+	fintalistaInvitati.push(fintoInvitato);
 }
+
+console.table(fintalistaInvitati);
